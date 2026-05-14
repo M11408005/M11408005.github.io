@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Post Preview - M11408005</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            accent: '#6366f1',
+                            accentHover: '#4f46e5',
+                            bg: '#F8F9FA',
+                            text: '#1F2937',
+                            muted: '#6B7280',
+                            card: '#FFFFFF'
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 50px rgba(0, 0, 0, 0.05)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F9FA;
+            color: #1F2937;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hashtag {
+            color: #6366f1;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .hashtag:hover {
+            color: #4f46e5;
+            text-decoration: underline;
+        }
+
+        .aspect-square-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* 1:1 Aspect Ratio */
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .aspect-square-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .aspect-square-container:hover img {
+            transform: scale(1.02);
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 99px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #1F2937;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary {
+            background-color: #F3F4F6;
+            color: #4B5563;
+        }
+
+        .btn-secondary:hover {
+            background-color: #E5E7EB;
+            transform: translateY(-2px);
+        }
+
+        /* Custom Scrollbar for Caption Area */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+
+    <main class="w-full max-w-5xl animate-fade-in">
+        <!-- Branding Label -->
+        <div class="flex items-center justify-between mb-6 px-2">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-brand-accent rounded-full flex items-center justify-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </div>
+                <span class="text-sm font-semibold tracking-wider text-brand-muted uppercase">Post Preview</span>
+            </div>
+            <div class="text-xs text-brand-muted font-medium bg-white/50 px-3 py-1 rounded-full border border-gray-100">
+                Instagram Design System v2.0
+            </div>
+        </div>
+
+        <!-- Main Content Card -->
+        <div class="bg-white rounded-3xl shadow-premium overflow-hidden flex flex-col md:flex-row">
+            
+            <!-- Left Side: Image (50% on desktop) -->
+            <div class="w-full md:w-1/2 p-4 md:p-8 flex items-center justify-center bg-gray-50/50">
+                <div class="aspect-square-container shadow-xl">
+                    <img src='https://opal.google/board/blobs/6ec9cebb-dbca-44d9-9936-63d93fbcc12b' alt='Instagram Post Content' />
+                </div>
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="w-full md:w-1/2 flex flex-col p-6 md:p-10 border-t md:border-t-0 md:border-l border-gray-100">
+                
+                <!-- Student ID Badge -->
+                <div class="mb-8">
+                    <div class="inline-flex items-center px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-lg">
+                        <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mr-3">Creator ID</span>
+                        <span class="font-mono text-indigo-700 font-bold tracking-tight">M11408005</span>
+                    </div>
+                </div>
+
+                <!-- Caption Area -->
+                <div class="flex-grow">
+                    <div id="caption-container" class="text-lg text-brand-text leading-relaxed whitespace-pre-wrap custom-scrollbar max-h-[400px] overflow-y-auto pr-4">
+學號：M11408005
+生活不一定要完美，但一定要充滿感恩。感謝那些陪伴我成長的人，也感謝每一個努力的昨天。今天又是充滿希望的一天，讓我們一起保持微笑，心懷感激地前進吧！
+
+#感恩 #生命中的美好 #正面思考 #溫暖 #日常分享
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-10 grid grid-cols-2 gap-4">
+                    <button onclick="copyCaption()" class="btn-action btn-secondary group">
+                        <svg class="group-hover:text-indigo-600 transition-colors" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <span>Copy Text</span>
+                    </button>
+                    <button class="btn-action btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        <span>Download</span>
+                    </button>
+                </div>
+
+                <!-- Toast Notification Container -->
+                <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full text-sm font-medium opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4">
+                    Caption copied to clipboard!
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Tips -->
+        <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-6 text-brand-muted text-sm italic">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Perfectly optimized for 1080x1080 upload
+            </div>
+            <div class="hidden md:block w-px h-4 bg-gray-300"></div>
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                Captions include smart hashtag highlighting
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Automatic Hashtag Highlighting
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('caption-container');
+            let content = container.innerHTML;
+            
+            // Regex to find hashtags - looks for # followed by non-whitespace
+            const hashtagRegex = /(#[\u4e00-\u9fa5a-zA-Z0-9_]+)/g;
+            
+            content = content.replace(hashtagRegex, (match) => {
+                return `<span class="hashtag">${match}</span>`;
+            });
+            
+            container.innerHTML = content;
+        });
+
+        // Copy Functionality
+        function copyCaption() {
+            const container = document.getElementById('caption-container');
+            const text = container.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                toast.classList.add('opacity-100', 'translate-y-0');
+                
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                    toast.classList.remove('opacity-100', 'translate-y-0');
+                }, 2500);
+            });
+        }
+    </script>
+</body>
+</html>
