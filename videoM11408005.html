@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>街舞研究綜述報告 | Street Dance Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#121212',
+                            accent: '#ff3e3e',
+                            gold: '#d4af37',
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                        body: ['Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .accent-gradient {
+            background: linear-gradient(90deg, #ff3e3e 0%, #ff8000 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="font-body custom-scrollbar">
+
+    <!-- Hero Section with Infographic -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center pt-12 pb-20 px-4">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden -z-10 opacity-20 pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-accent blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600 blur-[120px] rounded-full opacity-50"></div>
+        </div>
+
+        <div class="max-w-6xl w-full text-center mb-12">
+            <h2 class="text-brand-accent font-display font-bold tracking-[0.3em] uppercase text-sm mb-4">Research & Analysis</h2>
+            <h1 class="text-5xl md:text-7xl font-display font-extrabold mb-6 gradient-text">街舞研究綜述</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                從 1970 年代的布朗克斯街頭，到 2024 巴黎奧運殿堂。探索街舞的歷史演進、文化脈絡與身心影響。
+            </p>
+        </div>
+
+        <!-- Infographic Top Placement -->
+        <div class="max-w-6xl w-full glass-card overflow-hidden shadow-2xl animate-float">
+            <div class="p-2 md:p-4">
+                <img src='https://opal.google/board/blobs/ce853fa2-b9d0-4563-82ca-01413129ffed' alt='街舞研究資訊圖表' class="w-full h-auto rounded-xl shadow-inner shadow-black/50" />
+            </div>
+            <div class="bg-brand-glass px-8 py-4 flex flex-col md:flex-row justify-between items-center text-sm">
+                <div class="flex items-center space-x-4 mb-2 md:mb-0">
+                    <span class="w-2 h-2 bg-brand-accent rounded-full animate-ping"></span>
+                    <span class="text-gray-300 font-medium tracking-wide">INFOGRAPHIC: STREET DANCE EVOLUTION</span>
+                </div>
+                <div class="text-gray-500 italic">學號：M11408005</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Summary Bento Grid -->
+    <section class="max-w-7xl mx-auto px-4 py-20">
+        <div class="bento-grid">
+            <div class="glass-card p-8 col-span-2 row-span-1 border-l-4 border-l-brand-accent hover:scale-[1.02] transition-transform duration-300">
+                <h3 class="text-brand-accent font-bold mb-4 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    起源與演進
+                </h3>
+                <p class="text-gray-300 leading-relaxed">1970 年代紐約布朗克斯區起源，由非裔與拉丁裔族群發展，歷經 1980 全球化與 1990 新派轉型。</p>
+            </div>
+            <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+                <h3 class="text-brand-gold font-bold mb-4">風格多樣性</h3>
+                <p class="text-gray-400 text-sm">涵蓋 Breaking、Locking、Popping 等，具備獨特肢體語彙與音樂連結。</p>
+            </div>
+            <div class="glass-card p-8 hover:scale-[1.02] transition-transform duration-300">
+                <h3 class="text-blue-400 font-bold mb-4">體育建制化</h3>
+                <p class="text-gray-400 text-sm">Breaking 正式納入 2024 巴黎奧運，邁向標準化競技體育里程碑。</p>
+            </div>
+            <div class="glass-card p-8 col-span-2 md:col-span-4 bg-brand-accent/5">
+                <h3 class="text-white font-bold mb-4">身心效益實證</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 p-2 bg-brand-accent/20 rounded-lg text-brand-accent">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"></path><path fill-rule="evenodd" d="M3 10a7 7 0 1114 0 7 7 0 01-14 0zm7-9a9 9 0 100 18 9 9 0 000-18z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">生理機能</h4>
+                            <p class="text-xs text-gray-400">提升核心肌群、協調性與動態平衡。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 p-2 bg-brand-accent/20 rounded-lg text-brand-accent">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">認知功能</h4>
+                            <p class="text-xs text-gray-400">編舞學習刺激神經可塑性，提升注意力。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 p-2 bg-brand-accent/20 rounded-lg text-brand-accent">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">心理賦權</h4>
+                            <p class="text-xs text-gray-400">提升自尊心、自我效能感及社交連結。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section Middle Placement -->
+    <section class="py-20 bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-display font-bold mb-8 flex items-center justify-center">
+                <span class="w-8 h-[1px] bg-brand-accent mr-4"></span>
+                動態精華展示
+                <span class="w-8 h-[1px] bg-brand-accent ml-4"></span>
+            </h2>
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-accent to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative glass-card overflow-hidden">
+                    <video 
+                        src='https://opal.google/board/blobs/55f339e0-3a58-4c74-af1e-974b6190cd38' 
+                        alt='街舞短影片' 
+                        class="w-full aspect-video object-cover"
+                        controls 
+                        autoplay 
+                        muted 
+                        loop
+                    ></video>
+                </div>
+            </div>
+            <p class="mt-6 text-gray-500 text-sm italic">
+                影片涵蓋歷史起源、風格展示至奧運競技化演進過程。
+            </p>
+        </div>
+    </section>
+
+    <!-- Report Body Bottom Placement -->
+    <article class="max-w-4xl mx-auto px-6 py-24 leading-relaxed">
+        <header class="border-b border-white/10 pb-8 mb-12">
+            <h2 class="text-4xl font-display font-black mb-4">街舞（Street Dance）研究綜述報告</h2>
+            <p class="text-gray-500 uppercase tracking-widest text-sm">Full Academic Review & Report</p>
+        </header>
+
+        <div class="space-y-16 text-gray-300">
+            <!-- Section 1 -->
+            <section>
+                <div class="flex items-baseline space-x-4 mb-6">
+                    <span class="text-4xl font-display font-black text-white/10 italic">01</span>
+                    <h3 class="text-2xl font-bold text-white">街舞的起源與歷史發展</h3>
+                </div>
+                <p class="mb-4">街舞（Street Dance）起源於 20 世紀 1970 年代美國紐約市的布朗克斯區（The Bronx）。這項藝術形式並非源於單一體系，而是非洲裔與拉丁裔美國人在社會邊緣化與貧窮的環境下，透過街頭聚會（Block Parties）發展出的自我表達方式。</p>
+                <ul class="space-y-4 ml-6 border-l-2 border-brand-accent/30 pl-6">
+                    <li><strong class="text-white">1970年代：</strong> DJ Kool Herc 研發「Breakbeat」技術，促使發展出早期的 Breaking。西岸加州則發展出 Locking 與 Popping。</li>
+                    <li><strong class="text-white">1980年代：</strong> 透過電影《Flashdance》、《Wild Style》商業傳播，結合流行音樂全球化。</li>
+                    <li><strong class="text-white">1990年代至今：</strong> 發展出「新派嘻哈」（New School Hip-Hop），轉型為跨國界藝術形式與競技體育。</li>
+                </ul>
+            </section>
+
+            <!-- Section 2 -->
+            <section>
+                <div class="flex items-baseline space-x-4 mb-6">
+                    <span class="text-4xl font-display font-black text-white/10 italic">02</span>
+                    <h3 class="text-2xl font-bold text-white">主要街舞風格與特徵</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-brand-accent/50 transition-colors">
+                        <h4 class="font-bold text-brand-gold mb-2">地板舞 (Breaking)</h4>
+                        <p class="text-sm">包含搖滾步、地板動作、旋轉與定格，具高度競技性。</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                        <h4 class="font-bold text-brand-gold mb-2">鎖舞 (Locking)</h4>
+                        <p class="text-sm">快速指向、手腕旋轉與突然的鎖定動作。</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                        <h4 class="font-bold text-brand-gold mb-2">震動舞 (Popping)</h4>
+                        <p class="text-sm">肌肉快速收縮產生震動效果，結合機器人與流體動作。</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                        <h4 class="font-bold text-brand-gold mb-2">嘻哈舞 (Hip-Hop)</h4>
+                        <p class="text-sm">強調身體彈性 (Bounce) 與當代音樂節奏契合。</p>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-gray-500">此外亦涵蓋 House Dance、Waacking & Voguing 等多元風格。</p>
+            </section>
+
+            <!-- Section 3 & 4 Combined in Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <section>
+                    <div class="flex items-baseline space-x-4 mb-6">
+                        <span class="text-4xl font-display font-black text-white/10 italic">03</span>
+                        <h3 class="text-2xl font-bold text-white">文化影響力</h3>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm">
+                        <li>身份認同與賦權：提供非暴力競爭方式。</li>
+                        <li>在地化發展：法、日、韓發展出本土風格。</li>
+                        <li>商業藝術融合：打破高雅與大眾文化界限。</li>
+                    </ul>
+                </section>
+                <section>
+                    <div class="flex items-baseline space-x-4 mb-6">
+                        <span class="text-4xl font-display font-black text-white/10 italic">04</span>
+                        <h3 class="text-2xl font-bold text-white">身心健康影響</h3>
+                    </div>
+                    <p class="text-sm">研究顯示，街舞者的協調性與動態平衡顯著優於大眾，並透過「圈子文化」(Cypher) 建立社會支持，緩解孤獨感。</p>
+                </section>
+            </div>
+
+            <!-- Section 5 -->
+            <section class="bg-gradient-to-br from-brand-accent/20 to-transparent p-8 rounded-3xl border border-brand-accent/20">
+                <div class="flex items-baseline space-x-4 mb-6">
+                    <span class="text-4xl font-display font-black text-white/10 italic">05</span>
+                    <h3 class="text-2xl font-bold text-white">國際賽事：奧運 Breaking</h3>
+                </div>
+                <p class="mb-4">2024 年巴黎奧運正式將 Breaking 列為競賽項目，象徵其從「街頭活動」轉變為建制化運動（Institutionalized Sport）。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                    <div>
+                        <h4 class="text-white font-bold mb-2">Trivium 評分系統</h4>
+                        <p class="text-gray-400">從身體能力 (Physicality)、技巧性 (Interpretability) 與創意 (Creativity) 標準化評分。</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">學術討論</h4>
+                        <p class="text-gray-400">競技化是否會削弱原有的藝術自由度與靈魂是當前熱點爭議。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="pt-12 border-t border-white/10">
+                <h3 class="text-2xl font-bold text-white mb-6">結論 (Conclusion)</h3>
+                <div class="bg-brand-glass p-6 rounded-2xl italic text-gray-300">
+                    街舞從次文化演變為全球藝術與競技形式，不僅提供高效鍛鍊，更為群體提供賦權與認同。未來的挑戰在於如何在競技規則與原始藝術精神之間取得平衡。
+                </div>
+            </section>
+
+            <!-- References -->
+            <section class="text-xs text-gray-500 space-y-2">
+                <h4 class="text-sm font-bold text-gray-400 mb-4 uppercase tracking-widest">引用文獻</h4>
+                <p>1. Fogarty, M. J. (2022). Breaking and the Olympic Games. Journal of Hip Hop Studies.</p>
+                <p>2. Kaufmann, J. E., et al. (2023). Physiological Demands in Street Dance. Journal of Dance Medicine.</p>
+                <p>3. Schloss, J. G. (2020). Foundation: B-boys, B-girls, and Hip-Hop Culture in New York.</p>
+                <p>4. D'Innocenzo, G., et al. (2021). The psychological impact of street dance. Frontiers in Psychology.</p>
+                <p>5. WDSF (2023). Official Breaking Rulebook for Paris 2024.</p>
+                <p>6. Monea, A. (2022). Digital Dance: TikTok and Social Media. New Media & Society.</p>
+            </section>
+        </div>
+    </article>
+
+    <!-- Centered Footer -->
+    <footer class="py-12 border-t border-white/5 flex flex-col items-center justify-center space-y-4">
+        <div class="text-lg font-medium text-gray-400">
+            【主題探索報告】by <span class="italic text-brand-accent font-bold">Famidoc Chang</span>
+        </div>
+        <div class="text-xs tracking-[0.4em] text-gray-600 font-display">
+            M11408005 • ACADEMIC YEAR 2024
+        </div>
+    </footer>
+
+    <script>
+        // Smooth reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, article > div > section').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
